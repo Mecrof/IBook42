@@ -5,10 +5,11 @@
 		$tab = getAllBD();
 		foreach ($tab as $bd)
 		{
+			echo getScan($bd, 1);
 			displayBD($bd);
 		}
 		// test de la fonction de recherche
-		if ( ($res = search('Teacher'))==-1 )
+		/*if ( ($res = searchAll('Teacher'))==-1 )
 		{
 			echo 'error search(string)...';
 		}
@@ -18,7 +19,7 @@
 			{
 				displayBD($bd);
 			}
-		}
+		}*/
 		
 	?>
 </body>

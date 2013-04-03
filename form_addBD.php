@@ -10,12 +10,13 @@
 				$_POST['description'], 
 				$_POST['year'], 
 				$_POST['type'], 
-				$_POST['language']);
+				$_POST['language'],
+				$_POST['scanPath']);
 			echo '<h3>added</h3>';
 		}
 	?>
-
 	<form method="POST" action="<?php echo($_SERVER['PHP_SELF']); ?>">
+	<fieldset>
 		<div>
 			<label for="title">Title of the comic :</label>
 				<input name="title" type="text" value="">
@@ -51,10 +52,17 @@
 			<label for="description">Description of the comic :</label>
 				<textarea name="description" rows=10 cols=40></textarea>
 		</div>
+		<fieldset>
+			<legend><h4>Scans</h4></legend>
+			<div>
+				<label for="scanPath">Path of scans :</label>
+					<input name="scanPath" type="text" value="">
+			</div>
+		</fieldset>
 		<div>
 			<input type="submit" name="ajouter" value="Ajouter">
 		</div>
-		
+	</fieldset>
 	</form>
 </body>
 </html>

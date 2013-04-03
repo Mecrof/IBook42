@@ -1,5 +1,5 @@
 <?php
-	function add($title, $author, $illustrationPath, $description, $year, $type, $language)
+	function add($title, $author, $illustrationPath, $description, $year, $type, $language, $scanPath)
 	{
 		if ( ($id=getLastID())==-1)
 		{
@@ -18,6 +18,7 @@
 			$new_bd->addChild('illustrationPath', $illustrationPath);
 			$new_bd->addChild('description', $description);
 			$new_bd->addChild('year', $year);
+			$new_bd->addChild('scanPath', $scanPath);
 			
 			$file->asXml('./bds.xml');
 		}
@@ -65,12 +66,12 @@
 		return $resTab;
 	}
 	
-	function getBD($index)
+	function getBD($id)
 	{
 		$file = simplexml_load_file('./bds.xml');
 		foreach ($file->bd as $bd)
 		{
-			if ($bd['id']==$index)
+			if ($bd['id']==$id)
 				return $bd;
 		}
 		return -1;
@@ -105,7 +106,55 @@
 				echo '<p>Author : '.$bd->author.'</p>';
 				echo '<p>Description : '.$bd->description.'</p>';
 				echo '<p>Parution : '.$bd->year.'</p>';
+				echo '<p>Scans :</p>';
+				echo '<ul>';
+		$dirname = $bd->scanPath;
+		$dir = opendir($dirname); 
+		while($file = readdir($dir)) {
+			if($file != '.' && $file != '..' && !is_dir($dirname.$file))
+			{
+				echo '<li><a href="'.$dirname.$file.'">'.$file.'</a></li>';
+			}
+		}
+		closedir($dir);
+		echo '</ul>';
 		echo '</fieldset>';
+	}
+	
+	function countScans($bd)
+	{
+		$dirname = $bd->scanPath;
+		$dir = opendir($dirname); 
+		$cpt = 0;
+		while($file = readdir($dir)) {
+			if($file != '.' && $file != '..' && !is_dir($dirname.$file))
+			{
+				$cpt++;
+			}
+		}
+		closedir($dir);
+		return $cpt;
+	}
+	
+	function getScan($bd, $index)
+	{
+		$cpt = countScans($bd);
+		if ( $index > $cpt ){
+			return 'index non valide</br>';
+		}
+		$dirname = $bd->scanPath;
+		$dir = opendir($dirname); 
+		$cpt = 0;
+		while(($file = readdir($dir))&&($cpt!=$index)) {
+			if($file != '.' && $file != '..' && !is_dir($dirname.$file))
+			{
+				$cpt++;
+				if ($cpt==$index) {
+					return $dirname.$file;
+				}
+			}
+		}
+		closedir($dir);
 	}
 	
 	

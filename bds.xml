@@ -1,3 +1,3 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <base>
-<bd id="5" type="Manga" language="French"><title>GTO</title><author>Jiro Tanaguchi</author><illustrationPath>./gto01.jpg</illustrationPath><description>GTO : Great Teacher Onizuka</description><year>1996</year></bd></base>
+<bd id="7" type="Manga" language="French"><title>GTO T1</title><author>Toru Fujisawa</author><illustrationPath>./illustrations/gto01.jpg</illustrationPath><description>GTO (Great Teacher Onizuka) est un shonen manga racontant l'histoire de Eikichi Onizuka professeur dans une ecole.</description><year>1997</year><scanPath>./scans/GTO-01/</scanPath></bd><bd id="8" type="Manga" language="French"><title>GTO T2</title><author>Toru Fujisawa</author><illustrationPath>./illustrations/gto02.jpg</illustrationPath><description>voir la description de GTO T1.</description><year>1997</year><scanPath>./scans/GTO-02/</scanPath></bd></base>

@@ -1,5 +1,5 @@
 <?php
-	function add($title, $author, $illustrationPath, $description, $year, $type, $language, $scanPath)
+	/*function add($title, $author, $illustrationPath, $description, $year, $type, $language, $scanPath)
 	{
 		if ( ($id=getLastID())==-1)
 		{
@@ -22,6 +22,48 @@
 			
 			$file->asXml('./bds.xml');
 		}
+	}*/
+	
+	function addSerie($title, $author, $illustrationPath, $description, $year, $type, $language)
+	{
+		if ( ($id=getLastID())==-1)
+		{
+			echo "erreur id...</br>";
+		}
+		else
+		{
+			$file = simplexml_load_file('./bds.xml');
+			$new_serie = $file->addChild('serie');
+			$new_serie->addAttribute('id', ++$id);
+			addLastID($id);
+			$new_serie->addAttribute('type', $type);
+			$new_serie->addAttribute('language', $language);
+			$new_serie->addChild('title', $title);
+			$new_serie->addChild('author', $author);
+			$new_serie->addChild('illustrationPath', $illustrationPath);
+			$new_serie->addChild('description', $description);
+			$new_serie->addChild('year', $year);
+			$new_serie->addChild('volumes');
+			
+			$file->asXml('./bds.xml');
+		}
+	}
+	
+	function addVolumeToSerie($id, $num, $scanPath)
+	{
+		$file = simplexml_load_file('./bds.xml');
+		$s = null;
+		foreach ($file->serie as $serie){
+			if($serie['id']==$id){
+				$s = $serie;
+				break;
+			}
+		}
+		$new_vol = $s->volumes->addChild('volume');
+		$new_vol->addChild('num', $num);
+		$new_vol->addChild('scanPath', $scanPath);
+		$file->asXml('./bds.xml');
+		//$serie->volumes->addChild
 	}
 	
 	function addLastID($newId)
@@ -59,7 +101,7 @@
 	{
 		$resTab = array();
 		$file = simplexml_load_file('./bds.xml');
-		foreach ($file->bd as $bd) 
+		foreach ($file->serie as $bd) 
 		{
 			$resTab[] = $bd;
 		}
@@ -69,7 +111,7 @@
 	function getBD($id)
 	{
 		$file = simplexml_load_file('./bds.xml');
-		foreach ($file->bd as $bd)
+		foreach ($file->serie as $bd)
 		{
 			if ($bd['id']==$id)
 				return $bd;
@@ -82,7 +124,7 @@
 		$resTab = array();
 		$file = simplexml_load_file('./bds.xml');
 		$found = false;
-		foreach ($file->bd as $bd)
+		foreach ($file->serie as $bd)
 		{
 			if (stristr($bd->title, $string) || 
 				stristr($bd->author, $string) || 

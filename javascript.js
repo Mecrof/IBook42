@@ -34,13 +34,12 @@ init = function()
 		
 		blocks[i].onclick = function()
 		{
+			var center = document.getElementById('center');
 			var zoom = this.getElementsByClassName('zoom')[0];
 			var clone = zoom.cloneNode(true);
 			var closeIcon = clone.getElementsByClassName('close')[0];
 			
-			body.style.width = '780px';
-			
-			document.body.appendChild(clone);
+			center.appendChild(clone);
 			
 			setTimeout(function()
 				{
@@ -51,8 +50,7 @@ init = function()
 			
 			closeIcon.onclick = function()
 			{
-				document.body.removeChild(clone);
-				body.style.width = '';
+				center.removeChild(clone);
 			}
 		}
 	}

@@ -40,6 +40,7 @@ body
 	margin: auto;
 	
 	overflow-x: hidden;
+	overflow-y: hidden;
 	
 	background-color: rgba(0, 0, 0, 0.9);
 
@@ -93,6 +94,7 @@ body
 {
 	position: relative;
 	
+	width: 780px;
 	height: 615px;
 	
 	margin-top: 15px;
@@ -107,7 +109,7 @@ body
 	display:inline-block;
 	position: relative;
 	
-	width: 350px;
+	width: 360px;
 	height: 150px;
 	
 	overflow-y: hidden;
@@ -125,7 +127,7 @@ body
     -o-transition: opacity 0.2s ease-in;/* transition pour Opéra */
 }
 
-.block:nth-child(even-)
+.block:nth-child(even)
 {
 	margin-right: 0px;
 }
@@ -154,43 +156,16 @@ body
 	margin: 10 0 10 10;
 }
 
-.infos
-{
-	position: relative;
-	float: right;
-	
-	width: 210px;
-	height: 130px;
-	
-	margin: 10 10 10 0;
-}
-
-.title-scan
+.block .title-scan
 {
 	right: 0;
 	
 	margin: 5 10 0 0;
 	
-	color: #fff;
+	color: rgba(255, 255, 255, 1);
 	font-size: 2.2em;
 }
 
-.type, .author, .year
-{
-
-	right: 0;
-	
-	margin: 0 0 0 5;
-	
-	color: #fff;
-	font-size: 1em;
-}
-
-.block:last-child
-{
-	margin-bottom: 0px;
-}
- 
 .show
 {
 	position: absolute;
@@ -198,12 +173,11 @@ body
 	width: 760px;
 	height: 620px;
 	
-	top:25;
+	top:90;
 	left:0;
 	right: 20;
 	bottom: 0;
 	
-	margin: auto;
 	
 	background-color: rgba(0, 0, 0, .8);
 	
@@ -245,6 +219,7 @@ body
 	position: absolute;
 	
 	width: 400px;
+	height: 400px;
 	
 	right: 0;
 	
@@ -255,26 +230,48 @@ body
 	background-color: rgba(100, 50, 80, .5);
 }
 
-.show .zoom-infos .title-scan
+.infos
 {
-
+	position: relative;
+	float: right;
+	
+	width: 210px;
+	height: 130px;
+	
+	margin: 10 10 10 0;
 }
 
-.show .zoom-infos .type
+.show .zoom-infos .infos .type, 
+.show .zoom-infos .infos .author, 
+.show .zoom-infos .infos .year,
+.show .zoom-infos .infos .language,
+.show .zoom-infos .infos .description
 {
 
+	right: 0;
+	
+	margin: 0 0 0 5;
+	
+	color: rgba(255, 255, 255, 1);
+	font-size: 1em;
 }
 
-.show .zoom-infos .author
+.show .zoom-infos .infos .title-scan
 {
-
+	right: 0;
+	
+	margin: 5 10 0 0;
+	
+	color: rgba(255, 255, 255, 1);
+	font-size: 2.2em;
 }
 
-.show .zoom-infos .year
+.show .zoom-infos .infos .description
 {
+	margin-top: 15px;
 }
 
-.close
+.show .zoom-infos .close
 {
 	position: absolute;
 	
@@ -292,6 +289,6 @@ body
 	text-align: center;
 	line-height: 60px;
 	
-	color: #fff;
-	background-color:rgba(0, 0, 0, 1);
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(0, 0, 0, 1);
 }

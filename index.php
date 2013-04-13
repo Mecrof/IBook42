@@ -32,8 +32,8 @@
 				<!-- Div avec slider -->
 				<div id="move">
 				<?php
-					$bds = getAllBD();
-					foreach ($bds as $bd){
+					$series = getAllBD();
+					foreach ($series as $bd){
 						echo '<div class="block">
 									<div class="infos">
 										<div class="title-scan">';
@@ -64,6 +64,13 @@
 												<div class="description">
 													'.$bd->description.'
 												</div>
+												<ul>';
+						$vols = getAllVolumeOfBD($bd);
+						foreach($vols as $vol)
+						{
+							echo '<li><a href="./visio.php?s='.$bd['id'].'&v='.$vol->num.'&p=1">Vol. '.$vol->num.'</a></li>';
+						}
+						echo'						</ul>
 											</div>
 										</div>
 									</div>

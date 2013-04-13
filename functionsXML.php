@@ -49,12 +49,12 @@
 		}
 	}
 	
-	function addVolumeToSerie($id, $num, $scanPath)
+	function addVolumeToSerie($title, $num, $scanPath)
 	{
 		$file = simplexml_load_file('./bds.xml');
 		$s = null;
 		foreach ($file->serie as $serie){
-			if($serie['id']==$id){
+			if(strcmp($serie->title, $title) == 0){
 				$s = $serie;
 				break;
 			}
@@ -108,6 +108,16 @@
 		return $resTab;
 	}
 	
+	function getAllVolumeOfBD($serie)
+	{
+		$resTab = array();
+		foreach ($serie->volumes->volume as $bd) 
+		{
+			$resTab[] = $bd;
+		}
+		return $resTab;
+	}
+	
 	function getBD($id)
 	{
 		$file = simplexml_load_file('./bds.xml');
@@ -115,6 +125,20 @@
 		{
 			if ($bd['id']==$id)
 				return $bd;
+		}
+		return -1;
+	}
+	
+	function getVolume($serie, $idVol)
+	{
+		//$serie = getBD($idBD);
+		$tab = getAllVolumeOfBD($serie);
+		foreach ($tab as $vol)
+		{
+			if ($vol->num == $idVol)
+			{
+				return $vol;
+			}
 		}
 		return -1;
 	}

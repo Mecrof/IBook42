@@ -43,7 +43,12 @@
 			{
 				echo '
 					<li>
-						'.$serie->title.'
+											<h1 style="color:white;">
+						'.$serie->title.'	</h1>
+					</li>
+					<li>
+											<h1 style="color:white;">
+						'.$page.'/'.$nbPage.' </h1>
 					</li>
 				';
 				if ($page>1)
@@ -66,13 +71,15 @@
 					</li>
 					';
 				}
-			}
-		?>
+				echo '
 				<li>
-					<a class="button">
+					<a class="button" href="./accueil_visio.php?s='.$idSerie.'&v='.$idVol.'">
 						Retour
 					</a>
 				</li>
+				';
+			}
+			?>
 			</ul>
 			<!-- Fin menu -->
 			<?php

@@ -68,7 +68,7 @@
 						$vols = getAllVolumeOfBD($bd);
 						foreach($vols as $vol)
 						{
-							echo '<li><a href="./visio.php?s='.$bd['id'].'&v='.$vol->num.'&p=1">Vol. '.$vol->num.'</a></li>';
+							echo '<li><a href="./accueil_visio.php?s='.$bd['id'].'&v='.$vol->num.'">Vol. '.$vol->num.'</a></li>';
 						}
 						echo'						</ul>
 											</div>

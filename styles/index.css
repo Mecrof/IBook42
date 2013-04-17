@@ -1,0 +1,64 @@
+#title-frame
+{
+	position: absolute;
+
+	width: 760px;
+	height: 200px;
+	
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	margin: auto;
+}
+
+#title-frame h1
+{
+	display: inline-block;
+	
+	margin: 0;
+	
+	font-size: 5em;
+}
+
+#title-frame  div span
+{
+	display: inline-block;
+	position: absolute;
+
+	margin: 18px 0 0 0;
+	
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#title-frame #site-name
+{
+	display: inline-block;
+	position: absolute;
+	
+	margin: 32px 0 0 0;
+	font-size: 3em;
+}
+
+#title-frame h2
+{
+	width: 100%;
+	
+	margin-top: 0px;
+	
+	text-align: center;
+}
+
+#go
+{
+	display: block;
+	
+	width: 100%;
+	
+	text-align: center;
+	
+	text-decoration: none;
+	color: #fff;
+}

@@ -1,0 +1,26 @@
+.fade-in
+{
+	opacity: 1;
+	
+	-webkit-transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+}
+
+.blink:hover
+{
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+    animation: blink .75s linear infinite;
+}
+
+@-moz-keyframes blink {
+    0% { opacity: 10%; }
+    50% { opacity: 50%; }
+    80% { opacity: 0; }
+	90% { opacity: 50%; }
+    100% { opacity: 100%; }
+}

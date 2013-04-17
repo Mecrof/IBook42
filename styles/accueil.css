@@ -1,0 +1,128 @@
+#header #title
+{
+	font-size: 5em;
+}
+
+#left
+{
+	float: left;
+	display: inline-block;
+	
+	width: 25%;
+	height: 100%;
+	
+	min-width: 350px;
+	max-width: 350px;
+	
+	margin: 0 10px 0 0;
+}
+
+#left .block
+{
+	width: 100%;
+	height: 250px;
+	
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	
+	cursor: pointer;
+}
+
+#left .block:last-child
+{
+	margin-bottom: 10px;
+}
+
+#left .block:hover
+{
+	background-color: #fff;
+}
+
+#left .block  img
+{
+	float: left;
+	max-width: 150px;
+	
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#left .block  .title-scan
+{
+	display: inline-block;
+	position: absolute;
+	
+	min-width: 160px;
+	max-width: 160px;
+	
+	text-align: center;
+	background-color: red;
+	
+	-moz-border-radius:0px 10px 10px 0px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#right
+{
+	display: inline-block;
+	
+	width: 664px;
+	height: 100%;
+	
+	margin: 0;
+}
+
+#right .block
+{
+	width: 100%;
+	height: 250px;
+	
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	
+	cursor: pointer;
+	color: #000;
+	background-color: #fff;
+}
+
+#right .block img
+{
+	float: left;
+	max-width: 150px;
+	
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#right .block ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+#right .block ul li
+{
+	margin: 5px 0 0 0;
+	padding: 0;
+}
+
+#right .block ul li.description
+{
+	display: block;
+	font-size: 0.8em;
+}
+
+#right .block ul span
+{
+	display: inline-block;
+	
+	width: 120px;
+	
+	margin: 0;
+	padding: 0;
+}

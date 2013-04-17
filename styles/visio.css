@@ -1,0 +1,61 @@
+#header #title
+{
+	font-size: 5em;
+}
+
+h2
+{
+	display: inline-block;
+	
+	font-size: 1em;
+}
+
+#title
+{
+	display: inline-block;
+}
+
+#header ul
+{
+	position: absolute;
+	display: block;
+	
+	height: 40px;
+	
+	right: 0;
+	
+	margin-right: 10px;
+	
+}
+#header ul li 
+{
+	display: inline-block;
+}
+
+#header ul li a
+{
+	padding: 5px;
+	text-decoration: none;
+	
+	color: #fff;
+}
+
+#header ul li a:hover
+{
+	color: #000;
+	background-color: #fff;
+}
+
+#main-container
+{
+	margin-top: 50px;
+	
+	text-align: center;
+	
+	height: 100%;
+}
+
+#main-container img
+{
+	height: 740px;
+{

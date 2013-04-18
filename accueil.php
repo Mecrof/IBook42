@@ -12,6 +12,8 @@
 		<link type="text/css" href="./styles/effect.css" rel="stylesheet"/>
 		<link type="text/css" href="./styles/base.css" rel="stylesheet"/>
 		<link type="text/css" href="./styles/accueil.css" rel="stylesheet"/>
+		
+		<script type="text/javascript"  src="./js/accueil.js"></script>
 	</head>
 	
 	<body>
@@ -37,72 +39,64 @@
 			<div id="main-container">
 				<!-- Div avec slider -->
 				<div id="left">
-				<?php
-					$series = getAllBD();
-					foreach ($series as $bd)
-					{
-						echo '<div class="block">
-								<h1 class="title-scan">'
-									.$bd->title.
-								'</h1>
-								<img src="'.$bd->illustrationPath.'"/>
-							</div>';
-					}
-				
-				
-				?>
-					
-				</div>
-				
-				<div id="right">
-						<?php
-					$series = getAllBD();
-					foreach ($series as $bd){
-						echo '<div class="block">	
-								<!--<img class="cover" src="'.$bd->illustrationPath.'"/>-->
-								<ul class="infos">
-									<li class="title-scan">
-										<span class="info">Titre :</span>
-										'.$bd->title.'
-									</li>
-									<li class="type">
-										<span class="info">Titre :</span>
-										'.$bd['type'].'
-									</li>
-									<li class="author">
-										<span class="info">Auteur :</span>
-										'.$bd->author.'
-									</li>
-									<li class="year">
-										<span class="info">Année :</span>
-										'.$bd->year.'
-									</li>
-									<li class="language">
-										<span class="info">Langue :</span>
-										'.$bd['language'].'
-									</li>
-									<li class="description">
-										<span class="info">description :</span>
-										'.$bd->description.'
-									</li>
-								<ul>';
-								
-						$vols = getAllVolumeOfBD($bd);
-						foreach($vols as $vol)
+					<?php
+						$series = getAllBD();
+						foreach ($series as $bd)
 						{
-							echo'<li>
-									<a href="./accueil_visio.php?s='.$bd['id'].'&v='.$vol->num.'">
-										Vol. '.$vol->num.'
-									</a>
-								</li>';
-						}
+							echo '<div class="block fade-in-bg">
+									<span class="hover"></span>
+									<h1 class="title-scan">'
+										.$bd->title.
+									'</h1>
+									<img src="'.$bd->illustrationPath.'"/>
 
-						echo '</div>';
-					}
-				
-				
-				?>
+									<div class="block-infos">	
+										<ul class="infos">
+											<li class="title-scan">
+												<span class="info">Titre :</span>
+												'.$bd->title.'
+											</li>
+											<li class="type">
+												<span class="info">Titre :</span>
+												'.$bd['type'].'
+											</li>
+											<li class="author">
+												<span class="info">Auteur :</span>
+												'.$bd->author.'
+											</li>
+											<li class="year">
+												<span class="info">Année :</span>
+												'.$bd->year.'
+											</li>
+											<li class="language">
+												<span class="info">Langue :</span>
+												'.$bd['language'].'
+											</li>
+											<li class="description">
+												<span class="info">description :</span>
+												<p>'.$bd->description.'</p>
+											</li>
+										</ul>
+										
+										<ul class="links">';
+									
+							$vols = getAllVolumeOfBD($bd);
+							foreach($vols as $vol)
+							{
+								echo'<li>
+											<a class="fade-in-bg" href="./accueil_visio.php?s='.$bd['id'].'&v='.$vol->num.'">
+												Vol. '.$vol->num.'
+											</a>
+										</li>';
+							}
+
+							echo '	</ul>
+								</div>
+								</div>';
+						}
+					?>				
 				</div>
+
 			</div>
 			<!-- Fin body secondaire -->
 			

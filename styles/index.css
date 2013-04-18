@@ -51,6 +51,11 @@
 	text-align: center;
 }
 
+#go:hover
+{
+	color: #000;
+}
+
 #go
 {
 	display: block;

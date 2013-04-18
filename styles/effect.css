@@ -7,7 +7,7 @@
     -o-transition: opacity 1s ease-out;
     transition: opacity 1s ease-out;
 }
-
+/*
 .blink:hover
 {
     -webkit-animation: blink .75s linear infinite;
@@ -23,4 +23,28 @@
     80% { opacity: 0; }
 	90% { opacity: 50%; }
     100% { opacity: 100%; }
+}*/
+
+.fade-in-bg:hover
+{
+	background-color: #fff !important;
+	
+	-webkit-transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;
+    -o-transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;
+}
+
+.slide-fade-in
+{
+	left: 400px !important;
+	opacity: 1 !important;
+	
+	width: 500px !important;
+	height: 245px !important;
+	
+	-webkit-transition: left 0.2s linear, opacity 0.5s ease-in;
+	-moz-transition: left 0.2s linear, opacity 0.5s ease-in;
+	-o-transition: left 0.2s linear, opacity 0.5s ease-in;
+	transition: left 0.2s linear, opacity 0.5s ease-in;
 }

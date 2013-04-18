@@ -54,7 +54,7 @@
 				<!-- Menu principal -->
 				<ul id="menu">
 					<li>
-						<a id="button-home" href="./accueil.php">
+						<a class="fade-in-bg" href="./accueil.php">
 							Accueil
 						</a>
 					</li>

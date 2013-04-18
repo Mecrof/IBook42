@@ -53,17 +53,12 @@
 					';
 				?>
 					<ul id="menu">
-						<li>
-							<a id="button-home" href="./accueil.php">
-								Accueil
-							</a>
-						</li>
 				<?php
 					if ($page>1)
 					{
 						echo '
 							<li>
-								<a class="button" href="./visio.php?s='.$serie['id'].'&v='.$vol->num.'&p='.($page-1).'">
+								<a class="fade-in-bg" href="./visio.php?s='.$serie['id'].'&v='.$vol->num.'&p='.($page-1).'">
 									Précédent
 								</a>
 							</li>
@@ -73,7 +68,7 @@
 					{
 						echo'
 							<li>
-								<a class="button" href="./visio.php?s='.$serie['id'].'&v='.$vol->num.'&p='.($page+1).'">
+								<a class="fade-in-bg" href="./visio.php?s='.$serie['id'].'&v='.$vol->num.'&p='.($page+1).'">
 									Suivant
 								</a>
 							</li>
@@ -81,14 +76,20 @@
 					}
 						echo '
 							<li>
-								<a class="button" href="./accueil_visio.php?s='.$idSerie.'&v='.$idVol.'">
+								<a class="fade-in-bg" href="./accueil_visio.php?s='.$idSerie.'&v='.$idVol.'">
 									Retour
 								</a>
-							</li>
-						</ul>
-					';
+							</li>';
+						
 				}
 				?>
+				
+						<li>
+							<a class="fade-in-bg" href="./accueil.php">
+								Accueil
+							</a>
+						</li>
+					</ul>
 			</header>
 			<!-- Fin menu -->
 				

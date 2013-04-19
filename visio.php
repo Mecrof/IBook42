@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr_FR" lang="fr_FR">
 	<head>
 		<meta content="text/html; charset=iso-8859-1" http-equiv="content-type"/>
@@ -18,6 +18,8 @@
 		<div id="body">
 		<?php
 			include("functionsXML.php");
+			include("base.php");
+			
 			if (empty($_GET) || count($_GET)!=3)
 			{
 				$notFound = true;
@@ -37,61 +39,12 @@
 				$nbPage = countScans($vol);
 				$notFound = false;
 			}
+
+			if (!$notFound)
+			{
+				showHeaderVisio2($page, $serie->title, $idVol, $serie['id'], $vol->num, $nbPage);
+			}
 		?>
-			
-			<header id="header">
-				<?php
-				if (!$notFound)
-				{
-					echo '
-						<h1 id="title">
-							'.$serie->title.'	
-						</h1>
-						<h2>
-							'.$page.'/'.$nbPage.'
-						</h2>
-					';
-				?>
-					<ul id="menu">
-				<?php
-					if ($page>1)
-					{
-						echo '
-							<li>
-								<a class="fade-in-bg" href="./visio.php?s='.$serie['id'].'&v='.$vol->num.'&p='.($page-1).'">
-									Précédent
-								</a>
-							</li>
-						';
-					}
-					if ($page<$nbPage)
-					{
-						echo'
-							<li>
-								<a class="fade-in-bg" href="./visio.php?s='.$serie['id'].'&v='.$vol->num.'&p='.($page+1).'">
-									Suivant
-								</a>
-							</li>
-						';
-					}
-						echo '
-							<li>
-								<a class="fade-in-bg" href="./accueil_visio.php?s='.$idSerie.'&v='.$idVol.'">
-									Retour
-								</a>
-							</li>';
-						
-				}
-				?>
-				
-						<li>
-							<a class="fade-in-bg" href="./accueil.php">
-								Accueil
-							</a>
-						</li>
-					</ul>
-			</header>
-			<!-- Fin menu -->
 				
 
 			<!-- Fin menu -->
@@ -113,10 +66,11 @@
 					';
 				}
 			?>
-			<!-- Footer fixe -->
-			<div id="footer">
-				iBook42 - All rights reserved - 2013
-			</div>
+			
+			<!-- Footer -->
+			<?php
+				showFooter();
+			?>
 			<!-- Fin footer -->
 		</div>
 	</body>

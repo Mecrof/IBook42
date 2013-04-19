@@ -152,7 +152,6 @@
 		{
 			if (stristr($bd->title, $string) || 
 				stristr($bd->author, $string) || 
-				stristr($bd->description, $string) || 
 				stristr($bd->year, $string))
 			{
 				$resTab[] = $bd;

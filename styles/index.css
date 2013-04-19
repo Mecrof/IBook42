@@ -22,7 +22,7 @@
 	font-size: 5em;
 }
 
-#title-frame  div span
+#title-frame  div #sur
 {
 	display: inline-block;
 	position: absolute;
@@ -49,6 +49,11 @@
 	margin-top: 0px;
 	
 	text-align: center;
+}
+
+#alpha
+{
+	margin: 9px 0 0 7px;
 }
 
 #go:hover

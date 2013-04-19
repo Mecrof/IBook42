@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr_FR" lang="fr_FR">
 	<head>
 		<meta content="text/html; charset=iso-8859-1" http-equiv="content-type"/>
@@ -17,23 +17,16 @@
 	</head>
 	
 	<body>
-		<?php include("functionsXML.php"); ?>
+		<?php 
+			include("functionsXML.php"); 
+			include("base.php");
+		?>
 		
 		<div id="body">
-			<!-- Header contenant le titre et la recherche -->
-			<header id="header">
-				
-				<!-- Titre -->
-				<h1 id="title"> 
-					iBook42 
-				</h1>
-				<!-- Fin titre -->
-				
-				<!-- Recherche -->
-				<!-- Fin recherche -->
-				
-			</header>
-			<!-- Fin header -->
+		
+			<?php
+				showHeader();
+			?>
 			
 			<!-- Body -->
 			<div id="main-container">
@@ -53,27 +46,27 @@
 									<div class="block-infos">	
 										<ul class="infos">
 											<li class="title-scan">
-												<span class="info">Titre :</span>
+												<span class="info">Titre <span class="black">.............</span></span>
 												'.$bd->title.'
 											</li>
 											<li class="type">
-												<span class="info">Titre :</span>
+												<span class="info">Type <span class="black">.............</span></span>
 												'.$bd['type'].'
 											</li>
 											<li class="author">
-												<span class="info">Auteur :</span>
+												<span class="info">Auteur <span class="black">..........</span></span>
 												'.$bd->author.'
 											</li>
 											<li class="year">
-												<span class="info">Année :</span>
+												<span class="info">Année <span class="black">...........</span></span>
 												'.$bd->year.'
 											</li>
 											<li class="language">
-												<span class="info">Langue :</span>
-												'.$bd['language'].'
+												<span class="info">Langue <span class="black">.........</span></span>
+												'.($bd['language'] == "French" ? "Français":"Anglais").'
 											</li>
 											<li class="description">
-												<span class="info">description :</span>
+												<span class="info last-info">Description <span class="black">:</span></span>
 												<p>'.$bd->description.'</p>
 											</li>
 										</ul>
@@ -100,10 +93,10 @@
 			</div>
 			<!-- Fin body secondaire -->
 			
-			<!-- Footer fixe -->
-			<footer id="footer">
-				iBook42 - All rights reserved - 2013
-			</footer>
+			<!-- Footer -->
+			<?php
+				showFooter();
+			?>
 			<!-- Fin footer -->
 		</div>
 		

@@ -3,47 +3,9 @@
 	font-size: 5em;
 }
 
-h2
-{
-	display: inline-block;
-	
-	font-size: 1em;
-}
-
 #title
 {
 	display: inline-block;
-}
-
-#header ul
-{
-	position: absolute;
-	display: block;
-	
-	height: 40px;
-	
-	right: 0;
-	
-	margin-right: 10px;
-	
-}
-#header ul li 
-{
-	display: inline-block;
-}
-
-#header ul li a
-{
-	padding: 5px;
-	text-decoration: none;
-	
-	color: #fff;
-}
-
-#header ul li a:hover
-{
-	color: #000;
-	background-color: #fff;
 }
 
 #main-container
@@ -51,12 +13,26 @@ h2
 	margin-top: 50px;
 	
 	text-align: center;
-	
-	height: 100%;
-	min-height: 608px;
 }
 
 #main-container img
 {
-	height: 740px;
+	height: 700px;
+}
+
+#page
 {
+	display: block;
+	position: absolute;
+	
+	left: 0;
+	top: 0;
+	
+	margin: 97px 0 0 355px;
+	padding: 6px;
+	
+	color: #fff;
+	font-weight: bold;
+	
+	background-color: red;
+}

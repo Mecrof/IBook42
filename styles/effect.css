@@ -2,11 +2,12 @@
 {
 	opacity: 1;
 	
-	-webkit-transition: opacity 1s ease-out;
-    -moz-transition: opacity 1s ease-out;
-    -o-transition: opacity 1s ease-out;
-    transition: opacity 1s ease-out;
+	-webkit-transition: opacity 0.3s ease-in;
+    -moz-transition: opacity 0.3s ease-in;
+    -o-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
 }
+
 /*
 .blink:hover
 {
@@ -40,11 +41,14 @@
 	left: 400px !important;
 	opacity: 1 !important;
 	
-	width: 500px !important;
+	width: 470px !important;
 	height: 245px !important;
+	
+	z-index: 1 !important;
 	
 	-webkit-transition: left 0.2s linear, opacity 0.5s ease-in;
 	-moz-transition: left 0.2s linear, opacity 0.5s ease-in;
 	-o-transition: left 0.2s linear, opacity 0.5s ease-in;
 	transition: left 0.2s linear, opacity 0.5s ease-in;
+	
 }

@@ -1,5 +1,12 @@
+#header
+{
+	margin-bottom: 10px;
+}
+
 #header #title
 {
+	display: inline-block;
+	
 	font-size: 5em;
 }
 
@@ -27,11 +34,6 @@
 	cursor: pointer;
 	
 	background-color: #000;
-}
-
-#left .block:last-child
-{
-	margin-bottom: 10px;
 }
 
 #left .block:hover
@@ -69,7 +71,7 @@
 	opacity: 0;
 	position: absolute;
 	
-	width: 0px;
+	width: 240px;
 	height: 250px;
 	
 	left: 0px;
@@ -80,6 +82,8 @@
 	color: #000;
 	
 	background-color: #fff;
+	
+	z-index: -1;
 }
 
 #left .block .block-infos img
@@ -103,26 +107,22 @@
 	padding: 0;
 }
 
-#left .block .block-infos ul li span
-{
-	color: red;
-	font-weight: bold;
-}
-
 #left .block .block-infos ul li p
 {
 	height: 85px;
 		
 	overflow-y: auto;
 	
-	padding: 5px 5px 5px 5px;
+	margin: 3px 0 0 0;
+	padding: 0 5px 5px 5px;
 	
+	text-align: justify;
 	font-size: 0.8em;
 	
 	background-color: rgba(0 ,0 ,0 , .1);
 }
 
-#left .block .block-infos ul span
+#left .block .block-infos ul  li .info
 {
 	display: inline-block;
 	
@@ -130,6 +130,26 @@
 	
 	margin: 0;
 	padding: 0;
+	
+	color: red;
+	font-weight: bold;
+}
+
+#left .block .block-infos ul  li .last-info
+{
+	margin: 15px 0 0 0;
+	
+	color: red;
+	font-weight: bold;
+}
+
+.black
+{
+	display: inline-block;
+	position: absolute;
+
+	color: #000;
+	font-weight: normal;
 }
 
 #left .block .block-infos ul.links
@@ -138,7 +158,7 @@
 	position: absolute;
 	
 	width: 100px;
-	height: 180px;
+	max-height: 180px;
 	
 	top: 0;
 	right: 0;
@@ -159,7 +179,7 @@
 
 #left .block .block-infos ul.links li
 {
-	margin-left: 5px;
+	margin-left: 0px;
 	margin-bottom: 0px;
 }
 
@@ -167,6 +187,12 @@
 {
 	margin-top: 5px;
 }
+
+#left .block .block-infos ul.links li:last-child
+{
+	margin-bottom: 5px;
+}
+
 
 #left .block .block-infos ul.links li a:hover
 {
@@ -180,6 +206,7 @@
 	height: 30px;
 	width: 70px;
 	
+	margin-left: 5px;
 	padding-left: 5px;
 	line-height: 30px;
 	

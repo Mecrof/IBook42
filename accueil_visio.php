@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr_FR" lang="fr_FR">
 	<head>
 		<meta content="text/html; charset=iso-8859-1" http-equiv="content-type"/>
@@ -19,6 +19,8 @@
 		
 			<?php
 			include("functionsXML.php");
+			include("base.php");
+			
 			if (empty($_GET) || count($_GET)!=2)
 			{
 				$notFound = true;
@@ -39,19 +41,14 @@
 			}
 			?>
 			
-			<header id="header">
 				<?php
 				if (!$notFound)
 				{
-					echo '
-					<h1 id="title">
-						'.$serie->title.' - T'.$idVol.'
-					</h1>
-					';
+					showHeaderVisio($serie->title, $idVol);
 				}
 				?>
 				
-				<!-- Menu principal -->
+				<!-- 
 				<ul id="menu">
 					<li>
 						<a class="fade-in-bg" href="./accueil.php">
@@ -59,8 +56,7 @@
 						</a>
 					</li>
 					
-				</ul>
-			</header>
+				</ul>-->
 			<!-- Fin menu -->
 
 			<div id="main-container">
@@ -89,10 +85,10 @@
 				?>
 			</div>
 			
-			<!-- Footer fixe -->
-			<footer id="footer">
-				iBook42 - All rights reserved - 2013
-			</footer>
+			<!-- Footer -->
+			<?php
+				showFooter();
+			?>
 			<!-- Fin footer -->
 			
 		</div>

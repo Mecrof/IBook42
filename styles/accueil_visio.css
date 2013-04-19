@@ -1,49 +1,15 @@
-#header #title
+#header
 {
-	font-size: 5em;
-}
-
-#title
-{
-	display: inline-block;
-}
-
-#header ul
-{
-	position: absolute;
-	display: block;
-	
-	height: 40px;
-	
-	right: 0;
-	
-	margin-right: 10px;
-	
-}
-#header ul li 
-{
-	display: inline-block;
-}
-
-#header ul li a
-{
-	padding: 5px;
-	text-decoration: none;
-	
-	color: #fff;
-}
-
-#header ul li a:hover
-{
-	color: #000;
+	margin-bottom: 10px;
 }
 
 #main-container
 {
 	margin-top: 50px;
+	padding: 0 0 0 6px;
 	
 	height: 100%;
-	min-height: 608px;
+	min-height: 440px;
 }
 
 .block
